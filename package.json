@@ -1,0 +1,25 @@
+{
+  "name": "com.pixygon.uibuttoneffects",
+  "version": "0.5.0",
+  "displayName": "Pixygon UI Button Effects",
+  "description": "Effect-system for buttons in UI",
+  "unity": "2022.1",
+  "unityRelease": "20f1",
+  "documentationUrl": "https://www.pixygon.io/dev/uibuttoneffects",
+  "changelogUrl": "https://www.pixygon.io/dev/uibuttoneffects/changelog",
+  "licensesUrl": "https://www.pixygon.io/dev/uibuttoneffects/license",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+ },
+"hideInEditor": false,
+ "keywords": [
+    "Pixygon",
+    "UI",
+    "Effects"
+  ],
+  "author": {
+    "name": "Pixygon",
+    "email": "pixygon@pixygon.io",
+    "url": "https://www.pixygon.io"
+  }
+}
