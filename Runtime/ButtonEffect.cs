@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Pixygon.ButtonEffects
 {
-    public class ButtonEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class ButtonEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
     {
         [SerializeField] protected TextMeshProUGUI _text;
         [SerializeField] protected Image _icon;
@@ -48,6 +48,28 @@ namespace Pixygon.ButtonEffects
             }
         }
         public virtual void OnPointerEnter(PointerEventData eventData) {
+            Select();
+        }
+
+        public virtual void OnPointerExit(PointerEventData eventData) {
+            Deselect();
+        }
+
+        
+
+        public virtual void Activate() {
+            ClickAction?.Invoke();
+        }
+
+        public void OnSelect(BaseEventData eventData) {
+            Select();
+        }
+        public void OnDeselect(BaseEventData eventData) {
+            Deselect();
+        }
+        
+        private void Select() {
+            Debug.Log("Select");
             if (_useAudio) {
                 _audioHover.pitch = Random.Range(.9f, 1.1f);
                 _audioHover.Play();
@@ -68,8 +90,7 @@ namespace Pixygon.ButtonEffects
                     break;
             }
         }
-
-        public virtual void OnPointerExit(PointerEventData eventData) {
+        private void Deselect() {
             if (!_useHoverAction) return;
             switch (_animType) {
                 case AnimationType.FullSize:
@@ -85,10 +106,6 @@ namespace Pixygon.ButtonEffects
                     _text.transform.localScale = Vector3.one;
                     break;
             }
-        }
-
-        public virtual void Activate() {
-            ClickAction.Invoke();
         }
     }
 }
