@@ -69,7 +69,6 @@ namespace Pixygon.ButtonEffects
         }
         
         private void Select() {
-            Debug.Log("Select");
             if (_useAudio) {
                 _audioHover.pitch = Random.Range(.9f, 1.1f);
                 _audioHover.Play();
