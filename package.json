@@ -8,9 +8,7 @@
   "documentationUrl": "https://www.pixygon.io/dev/uibuttoneffects",
   "changelogUrl": "https://www.pixygon.io/dev/uibuttoneffects/changelog",
   "licensesUrl": "https://www.pixygon.io/dev/uibuttoneffects/license",
-  "dependencies": {
-    "com.unity.textmeshpro": "3.0.6"
- },
+  "dependencies": {},
 "hideInEditor": false,
  "keywords": [
     "Pixygon",
